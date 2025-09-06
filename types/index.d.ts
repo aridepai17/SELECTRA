@@ -1,11 +1,11 @@
-export interface Job {
+interface Job {
 	title: string;
 	description: string;
 	location: string;
 	requiredSkills: string[];
 }
 
-export interface Resume {
+interface Resume {
 	id: string;
 	companyName?: string;
 	jobTitle?: string;
@@ -14,7 +14,7 @@ export interface Resume {
 	feedback: Feedback;
 }
 
-export interface Feedback {
+interface Feedback {
 	overallScore: number;
 	ATS: {
 		score: number;
