@@ -1,5 +1,5 @@
 import Navbar from "~/components/Navbar";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import FileUploader from "~/components/FileUploader";
 import { generateUUID } from "~/lib/utils";
 import { usePuterStore } from "~/lib/puter";
@@ -42,7 +42,7 @@ const Upload = () => {
             imagePath: uploadedImage.path,
             companyName,
             jobTitle,
-            jobDescription
+            jobDescription,
             feedback: '',
         }
         await kv.set(`resume:${uuid}`, JSON.stringify(data));
