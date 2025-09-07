@@ -3,7 +3,7 @@ import { useState, type FormEvent } from "react";
 import FileUploader from "~/components/FileUploader";
 import { generateUUID } from "~/lib/utils";
 import { usePuterStore } from "~/lib/puter";
-import { convertPdfToImage } from "~/lib/utils"
+import { convertPdfToImage } from "~/lib/pdf2img"
 import { data, useNavigate } from "react-router";
 import { prepareInstructions } from "../../constants";
 
