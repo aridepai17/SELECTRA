@@ -4,7 +4,7 @@ import FileUploader from "~/components/FileUploader";
 import { generateUUID } from "~/lib/utils";
 import { usePuterStore } from "~/lib/puter";
 import { convertPdfToImage } from "~/lib/pdf2img"
-import { data, useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { prepareInstructions } from "../../constants";
 
 
@@ -113,7 +113,7 @@ const Upload = () => {
                             </div>
                             <div className="form-div">
                                 <label htmlFor="uploader">Upload Resume</label>
-                                <FileUploader onFileSelect={handleFileSelect} />
+                                <FileUploader id="uploader" onFileSelect={handleFileSelect} />
                             </div>
 
                             <button className="primary-button" type="submit">
