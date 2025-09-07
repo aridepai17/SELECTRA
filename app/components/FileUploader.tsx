@@ -1,38 +1,36 @@
-import { get } from "http";
-import { useState, useCallback } from "react";
+import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { formatSize } from "../lib/utils";
 
 interface FileUploaderProps {
 	onFileSelect?: (file: File | null) => void;
+	id: string;
 }
 
-const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
+const FileUploader = ({ onFileSelect, id }: FileUploaderProps) => {
 	const onDrop = useCallback(
 		(acceptedFiles: File[]) => {
 			const file = acceptedFiles[0] || null;
-
 			onFileSelect?.(file);
 		},
 		[onFileSelect]
 	);
 
-	const maxFileSize = 20 * 1024 * 1024; // 20 MB
+	const maxFileSize = 20 * 1024 * 1024; // 20MB in bytes
 
-	const { getRootProps, getInputProps, isDragActive, acceptedFiles } =
-		useDropzone({
-			onDrop,
-			multiple: false,
-			accept: { "application/pdf": [".pdf"] },
-			maxSize: maxFileSize,
-		});
+	const { getRootProps, getInputProps, acceptedFiles } = useDropzone({
+		onDrop,
+		multiple: false,
+		accept: { "application/pdf": [".pdf"] },
+		maxSize: maxFileSize,
+	});
 
 	const file = acceptedFiles[0] || null;
 
 	return (
 		<div className="w-full gradient-border">
 			<div {...getRootProps()}>
-				<input {...getInputProps()} />
+				<input id={id} {...getInputProps()} />
 
 				<div className="space-y-4 cursor-pointer">
 					{file ? (
@@ -58,6 +56,7 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
 							<button
 								className="p-2 cursor-pointer"
 								onClick={(e) => {
+									e.stopPropagation();
 									onFileSelect?.(null);
 								}}
 							>
@@ -84,7 +83,7 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
 								or drag and drop
 							</p>
 							<p className="text-lg text-gray-500">
-								PDF (max{formatSize(maxFileSize)})
+								PDF (max {formatSize(maxFileSize)})
 							</p>
 						</div>
 					)}
