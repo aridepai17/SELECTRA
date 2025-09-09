@@ -34,12 +34,15 @@ const Upload = () => {
         const uploadedImage = await fs.upload([imageFile.file]);
         if(!uploadedImage) return setStatusText('Error: Failed to upload image');
 
+        const previewUrl = URL.createObjectURL(imageFile.file);
+
         setStatusText('Preparing Data...');
         const uuid = generateUUID();
         const data = {
             id: uuid,
             resumePath: uploadedFile.path,
             imagePath: uploadedImage.path,
+            previewUrl,
             companyName,
             jobTitle,
             jobDescription,
