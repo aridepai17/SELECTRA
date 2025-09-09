@@ -4,7 +4,7 @@
 
 A smart web application that helps job seekers optimize their resumes for Applicant Tracking Systems (ATS)
 
-[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Site-4F46E5?style=for-the-badge)](https://select-nine.vercel.app)
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Site-4F46E5?style=for-the-badge)](https://selectra-nine.vercel.app)
 [![GitHub Repo](https://img.shields.io/badge/📂_GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/aridepai17/SELECTRA)
 
 ---
