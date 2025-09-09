@@ -4,8 +4,8 @@
 
 A smart web application that helps job seekers optimize their resumes for Applicant Tracking Systems (ATS)
 
-[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Site-4F46E5?style=for-the-badge)](https://your-app.vercel.app)
-[![GitHub Repo](https://img.shields.io/badge/📂_GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/your-username/resume-analyzer)
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Site-4F46E5?style=for-the-badge)](https://select-nine.vercel.app)
+[![GitHub Repo](https://img.shields.io/badge/📂_GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/aridepai17/SELECTRA)
 
 ---
 
@@ -32,6 +32,15 @@ A smart web application that helps job seekers optimize their resumes for Applic
 - ⚡ **Real-time Updates** - Live processing status with progress indicators  
 
 ---
+
+## SCREENSHOTS
+
+<div align="center">
+  <img src="screenshots/home.png" alt="Main UI" width="400" style="margin: 10px;">
+  <img src="screenshots/uploadresume.png" alt="Screenshot 2: Upload Flow" width="400" style="margin: 10px;">
+  <img src="screenshots/analyzeresume.png" alt="Screenshot 3: Analyzing Resume" width="400" style="margin: 10px;">
+  <img src="screenshots/resumereview.png" alt="Screenshot 4: Resume Review" width="400" style="margin: 10px;">
+</div>
 
 ## 🛠️ TECH STACK
 <div align="center">
@@ -157,9 +166,9 @@ resume-analyzer/
 
 **We welcome contributions from the community!**
 
-[![Contributors](https://img.shields.io/github/contributors/your-username/resume-analyzer?style=for-the-badge)](https://github.com/aridepai17/SELECTRA/graphs/contributors)
-[![Forks](https://img.shields.io/github/forks/your-username/resume-analyzer?style=for-the-badge)](https://github.com/aridepai17/SELECTRA/network/members)
-[![Stars](https://img.shields.io/github/stars/your-username/resume-analyzer?style=for-the-badge)](https://github.com/aridepai17/SELECTRA/stargazers)
+[![Contributors](https://img.shields.io/github/contributors/aridepai17/SELECTRAr?style=for-the-badge)](https://github.com/aridepai17/SELECTRA/graphs/contributors)
+[![Forks](https://img.shields.io/github/forks/aridepai17/SELECTRA?style=for-the-badge)](https://github.com/aridepai17/SELECTRA/network/members)
+[![Stars](https://img.shields.io/github/stars/aridepai17/SELECTRA?style=for-the-badge)](https://github.com/aridepai17/SELECTRA/stargazers)
 
 </div>
 
@@ -202,7 +211,7 @@ resume-analyzer/
 | **Best Practices** | 92/100 | 🟢 Good |
 | **SEO** | 100/100 | 🟢 Perfect |
 
-[![Website Status](https://img.shields.io/website-up-down-green-red/http/your-app.vercel.app.svg?style=for-the-badge)](https://your-app.vercel.app)
+[![Website Status](https://img.shields.io/website-up-down-green-red/http/selectra-nine.vercel.app.svg?style=for-the-badge)](https://selectra-nine.vercel.app)
 
 </div>
 
