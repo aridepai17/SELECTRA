@@ -250,6 +250,7 @@ export const usePuterStore = create<PuterStore>((set, get) => {
 	const init = (): void => {
 		const puter = getPuter();
 		if (puter) {
+			puter.quiet = true;
 			set({ puterReady: true });
 			checkAuthStatus();
 			return;
