@@ -1,5 +1,5 @@
 import Navbar from "~/components/Navbar";
-import { useState, type FormEvent } from "react";
+import { useState, useEffect, type FormEvent } from "react";
 import FileUploader from "~/components/FileUploader";
 import { generateUUID } from "~/lib/utils";
 import { usePuterStore } from "~/lib/puter";
@@ -18,6 +18,12 @@ const Upload = () => {
     const handleFileSelect = (file: File | null) => {
         setFile(file)
     }
+
+    useEffect(() => {
+        if (!isLoading && !auth.isAuthenticated) {
+            navigate("/auth?next=/upload");
+        }
+    }, [isLoading, auth.isAuthenticated, navigate]);
 
     const handleAnalyze = async ({ companyName, jobTitle, jobDescription, file }: { companyName: string, jobTitle: string, jobDescription: string, file: File }) => {
         setIsProcessing(true);
@@ -48,14 +54,19 @@ const Upload = () => {
             jobDescription,
             feedback: '',
         }
-        await kv.set(`resume:${uuid}`, JSON.stringify(data));
 
         setStatusText('Analyzing the resume...');
 
-        const feedback = await ai.feedback(
-            uploadedFile.path,
-            prepareInstructions({jobTitle, jobDescription})
-        )
+        let feedback;
+        try {
+            feedback = await ai.feedback(
+                uploadedFile.path,
+                prepareInstructions({jobTitle, jobDescription})
+            );
+        } catch (err) {
+            return setStatusText('Error: Failed to analyze resume - ' + (err instanceof Error ? err.message : 'unknown error'));
+        }
+
         if (!feedback) return setStatusText('Error: Failed to analyze resume');
 
         const feedbackText = typeof feedback.message.content === 'string'
