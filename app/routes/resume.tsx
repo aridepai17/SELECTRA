@@ -23,32 +23,42 @@ const Resume = () => {
 			navigate(`/auth?next=/resume/${id}`);
 	}, [isLoading]);
 
-	useEffect(() => {
-		const loadResume = async () => {
-			const resume = await kv.get(`resume:${id}`);
+		useEffect(() => {
+			const loadResume = async () => {
+				const resume = await kv.get(`resume:${id}`);
 
-			if (!resume) return;
+				if (!resume) return;
 
-			const data = JSON.parse(resume);
+				const data = JSON.parse(resume);
 
-			const resumeBlob = await fs.read(data.resumePath);
-			if (!resumeBlob) return;
+				// Feedback is already in KV — show it immediately while images load
+				setFeedback(data.feedback);
 
-			const pdfBlob = new Blob([resumeBlob], { type: "application/pdf" });
-			const resumeUrl = URL.createObjectURL(pdfBlob);
-			setResumeUrl(resumeUrl);
+				const [resumeResult, imageResult] = await Promise.allSettled([
+					fs.read(data.resumePath),
+					fs.read(data.imagePath),
+				]);
 
-			const imageBlob = await fs.read(data.imagePath);
-			if (!imageBlob) return;
-			const imageUrl = URL.createObjectURL(imageBlob);
-			setImageUrl(imageUrl);
+				if (resumeResult.status === "fulfilled" && resumeResult.value) {
+					const pdfBlob = new Blob([resumeResult.value], {
+						type: "application/pdf",
+					});
+					setResumeUrl(URL.createObjectURL(pdfBlob));
+				}
 
-			setFeedback(data.feedback);
-			console.log({ resumeUrl, imageUrl, feedback: data.feedback });
-		};
+				if (imageResult.status === "fulfilled" && imageResult.value) {
+					setImageUrl(URL.createObjectURL(imageResult.value));
+				}
 
-		loadResume();
-	}, [id]);
+				console.log({
+					resumeUrl: resumeUrl,
+					imageUrl: imageUrl,
+					feedback: data.feedback,
+				});
+			};
+
+			loadResume();
+		}, [id]);
 
 	return (
 		<main className="!pt-0">
