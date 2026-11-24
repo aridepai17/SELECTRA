@@ -93,7 +93,7 @@ form {
     }
 
     .resumes-section {
-        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 items-start w-full max-w-[1400px] mx-auto;
+        @apply gap-6 items-start w-full max-w-[1400px] mx-auto;
     }
 
     .resume-card {
