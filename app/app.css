@@ -97,7 +97,7 @@ form {
     }
 
     .resume-card {
-        @apply flex flex-col gap-8 min-h-[560px] w-full max-w-xs sm:max-w-[350px] lg:max-w-[430px] xl:max-w-[420px] bg-white rounded-2xl p-4;
+        @apply flex flex-col gap-8 min-h-[560px] w-full max-w-xs sm:max-w-[350px] lg:max-w-[430px] xl:max-w-[460px] bg-white rounded-2xl p-4;
     }
 
     .resume-card-header {
@@ -105,7 +105,7 @@ form {
     }
 
     .feedback-section {
-        @apply flex flex-col gap-8 flex-1 max-w-[600px] px-8 max-lg:w-full py-6;
+        @apply flex flex-col gap-8 flex-1 px-8 max-lg:w-full py-6;
     }
 
     .navbar {
