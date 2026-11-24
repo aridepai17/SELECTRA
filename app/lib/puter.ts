@@ -3,6 +3,7 @@ import { create } from "zustand";
 declare global {
 	interface Window {
 		puter: {
+			quiet?: boolean;
 			auth: {
 				getUser: () => Promise<PuterUser>;
 				isSignedIn: () => Promise<boolean>;
@@ -259,6 +260,7 @@ export const usePuterStore = create<PuterStore>((set, get) => {
 		const interval = setInterval(() => {
 			if (getPuter()) {
 				clearInterval(interval);
+				getPuter()!.quiet = true;
 				set({ puterReady: true });
 				checkAuthStatus();
 			}
@@ -357,7 +359,7 @@ export const usePuterStore = create<PuterStore>((set, get) => {
 					],
 				},
 			],
-			{ model: "claude-opus-4-1" }
+			{ model: "anthropic/claude-sonnet-5-5" }
 		) as Promise<AIResponse | undefined>;
 	};
 
