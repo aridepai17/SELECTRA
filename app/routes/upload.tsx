@@ -64,7 +64,12 @@ const Upload = () => {
                 prepareInstructions({jobTitle, jobDescription})
             );
         } catch (err) {
-            return setStatusText('Error: Failed to analyze resume - ' + (err instanceof Error ? err.message : 'unknown error'));
+            const msg = err instanceof Error
+                ? err.message
+                : typeof err === 'string'
+                    ? err
+                    : JSON.stringify(err);
+            return setStatusText('Error: Failed to analyze resume - ' + msg);
         }
 
         if (!feedback) return setStatusText('Error: Failed to analyze resume');
