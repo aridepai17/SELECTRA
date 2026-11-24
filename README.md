@@ -4,7 +4,7 @@
 
 A smart web application that helps job seekers optimize their resumes for Applicant Tracking Systems (ATS)
 
-[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Site-4F46E5?style=for-the-badge)](https://selectra-nine.vercel.app)
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Site-4F46E5?style=for-the-badge)](https://selectraresume.vercel.app)
 [![GitHub Repo](https://img.shields.io/badge/📂_GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/aridepai17/SELECTRA)
 
 ---
@@ -23,13 +23,13 @@ A smart web application that helps job seekers optimize their resumes for Applic
 </div>
 
 - 🔍 **AI-Powered Analysis** - Get detailed feedback based on job title and description
-- 📁 **Smart File Upload** - Drag-and-drop or click to upload PDF resumes  
-- 🖼️ **Visual Resume Preview** - Convert PDFs to high-quality PNG images using `pdf.js`  
-- ☁️ **Cloud Storage** - Upload resumes and images to secure storage system  
+- 📁 **Smart File Upload** - Drag-and-drop or click to upload PDF resumes
+- 🖼️ **Visual Resume Preview** - Convert PDFs to high-quality PNG images using `pdf.js`
+- ☁️ **Cloud Storage** - Upload resumes and images to secure storage system
 - 📊 **Detailed Reports** - Comprehensive analysis with actionable insights
-- 💾 **Persistent Results** - Store feedback in key-value store for future access  
-- 📱 **Responsive Design** - Works seamlessly on desktop, tablet, and mobile  
-- ⚡ **Real-time Updates** - Live processing status with progress indicators  
+- 💾 **Persistent Results** - Store feedback in key-value store for future access
+- 📱 **Responsive Design** - Works seamlessly on desktop, tablet, and mobile
+- ⚡ **Real-time Updates** - Live processing status with progress indicators
 
 ---
 
@@ -44,7 +44,7 @@ A smart web application that helps job seekers optimize their resumes for Applic
 
 ## 🛠️ TECH STACK
 <div align="center">
-  
+
 ### Frontend
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -55,8 +55,8 @@ A smart web application that helps job seekers optimize their resumes for Applic
 [![PDF.js](https://img.shields.io/badge/PDF.js-FF6B35?style=for-the-badge&logo=mozilla&logoColor=white)](https://mozilla.github.io/pdf.js/)
 [![Zustand](https://img.shields.io/badge/Zustand-2D3748?style=for-the-badge&logo=react&logoColor=white)](https://zustand-demo.pmnd.rs/)
 
-### AI & Routing  
-[![OpenAI](https://img.shields.io/badge/AI_Integration-412991?style=for-the-badge&logo=openai&logoColor=white)](https://openai.com/)
+### AI & Storage
+[![Puter.js](https://img.shields.io/badge/Puter.js-2D3748?style=for-the-badge&logo=javascript&logoColor=white)](https://puter.com/)
 [![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/)
 
 </div>
@@ -87,7 +87,7 @@ A smart web application that helps job seekers optimize their resumes for Applic
 3. **Start development server**
    ```bash
    npm run dev
-   # or  
+   # or
    yarn dev
    ```
 
@@ -120,7 +120,7 @@ resume-analyzer/
 ├─  app/
 │  ├─  components/
 │  │  ├─  Accordion.tsx
-│  │  ├─  ATS.tsx  
+│  │  ├─  ATS.tsx
 │  │  ├─  Details.tsx
 │  │  ├─  FileUploader.tsx
 │  │  ├─  Navbar.tsx
@@ -191,7 +191,7 @@ resume-analyzer/
 
 ### 📝 **Commit Convention**
 - `feat:` - New features
-- `fix:` - Bug fixes  
+- `fix:` - Bug fixes
 - `docs:` - Documentation updates
 - `style:` - Code formatting
 - `refactor:` - Code refactoring
@@ -207,11 +207,11 @@ resume-analyzer/
 | Metric | Score | Status |
 |:---|:---:|:---:|
 | **Lighthouse Performance** | 95/100 | 🟢 Excellent |
-| **Accessibility** | 98/100 | 🟢 Excellent |  
+| **Accessibility** | 98/100 | 🟢 Excellent |
 | **Best Practices** | 92/100 | 🟢 Good |
 | **SEO** | 100/100 | 🟢 Perfect |
 
-[![Website Status](https://img.shields.io/website-up-down-green-red/http/selectra-nine.vercel.app.svg?style=for-the-badge)](https://selectra-nine.vercel.app)
+[![Website Status](https://img.shields.io/website-up-down-green-red/http/selectraresume.vercel.app.svg?style=for-the-badge)](https://selectraresume.vercel.app)
 
 </div>
 
@@ -227,10 +227,3 @@ resume-analyzer/
 
 </div>
 ---
-
-### ⭐ SHOW YOUR SUPPORT
-
-**If this project helped you, please consider giving it a star!**
-
-[![GitHub stars](https://img.shields.io/github/stars/aridepai17/SELECTRA?style=social)](https://github.com/your-username/resume-analyzer/stargazers)
-</div>
