@@ -78,7 +78,25 @@ const Upload = () => {
             ? feedback.message.content 
             : feedback.message.content[0].text;
 
-        data.feedback = JSON.parse(feedbackText);
+        const cleanJson = (text: string): string => {
+            let cleaned = text.trim();
+            cleaned = cleaned.replace(/^```json\s*/, '').replace(/^```\s*/, '').replace(/\s*```$/, '');
+            const start = cleaned.indexOf('{');
+            const end = cleaned.lastIndexOf('}');
+            if (start !== -1 && end !== -1 && end > start) {
+                cleaned = cleaned.substring(start, end + 1);
+            }
+            return cleaned;
+        };
+
+        const parsedFeedback = cleanJson(feedbackText);
+        try {
+            data.feedback = JSON.parse(parsedFeedback);
+        } catch {
+            // Best-effort: replace single quotes with double quotes
+            const fixed = parsedFeedback.replace(/'/g, '"');
+            data.feedback = JSON.parse(fixed);
+        }
         await kv.set(`resume:${uuid}`, JSON.stringify(data));
         setStatusText('Analysis complete, redirecting...');
         console.log(data);
